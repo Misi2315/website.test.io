@@ -3,77 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Valentine</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-
-<div class="container">
-    <audio id="hatterzene" src="asd.mp3" loop></audio>
-    <img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif">
-    <p><i>Will you be my Valentine?</i></p>
-    <button type="button" id="yes"><a href="asd.html">Yes</a></button>
-    <button type="button" id="no" onmouseover="changeText(this)" onmouseout="revertText(this)">
-        <a href="asd.html" id="noLink">No</a>
-    </button>
-    <br>
-    <br>
-    <br>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.03" oninput="setVolume(this.value)">
-</div>
-<script>
-
-    function setVolume(value) {
-        var zene = document.getElementById('hatterzene');
-        zene.volume = value;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var zene = document.getElementById('hatterzene');
-        var playPauseBtn = document.getElementById('playPauseBtn');
-
-        playPauseBtn.addEventListener('click', function() {
-            if (zene.paused) {
-                zene.play();
-                playPauseBtn.textContent = '||'; // Opcionálisan frissítheted a gomb szövegét
-            } else {
-                zene.pause();
-                playPauseBtn.textContent = '▶'; // Opcionálisan frissítheted a gomb szövegét
-            }
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var zene = document.getElementById('hatterzene');
-        // Alapértelmezett hangerő beállítása 0.03-ra
-        zene.volume = 0.03;
-
-        // Próbálja meg automatikusan elindítani a zenét
-        var playPromise = zene.play();
-
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                // Automatikus lejátszás sikeres
-            }).catch(error => {
-                console.log("Automatikus zenelejátszás nem sikerült: ", error);
-                // Automatikus lejátszás nem sikerült.
-                // Ideális esetben itt kérheted a felhasználót, hogy manuálisan indítsa el a zenét.
-            });
-        }
-    });
-    function changeText(element) {
-        setTimeout(function() {
-            var link = element.querySelector("a"); // Megkeresi a gombon belüli <a> elemet
-            link.innerHTML = 'Yes'; // Csak a hivatkozás szövegét változtatja meg
-        }, 100);
-    }
-    function revertText(element) {
-        setTimeout(function() {
-            var link = element.querySelector("a"); // Megkeresi a gombon belüli <a> elemet
-            link.innerHTML = 'No'; // A hivatkozás szövegét állítja vissza
-        }, 100);
-    }
-
-</script>
+<a href="index.html"><img src="https://cdn.dribbble.com/users/1270132/screenshots/6361946/jelly-heart-button.gif"></a>
 
 </body>
 </html>
