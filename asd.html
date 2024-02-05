@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<audio id="hatterzene" src="asd.mp3" loop></audio>
+
+<table>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td><img src="https://gifdb.com/images/high/cute-love-kisses-for-you-uujbuokzyop19e4w.gif"></td>
+    </tr>
+    <tr>
+        <td>
+            <p><i>Yayyy!!! <font color="red"><3</font></i></p>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function setVolume(value) {
+        var zene = document.getElementById('hatterzene');
+        zene.volume = value;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var zene = document.getElementById('hatterzene');
+        var playPauseBtn = document.getElementById('playPauseBtn');
+
+        playPauseBtn.addEventListener('click', function() {
+            if (zene.paused) {
+                zene.play();
+                playPauseBtn.textContent = '||'; // Opcionálisan frissítheted a gomb szövegét
+            } else {
+                zene.pause();
+                playPauseBtn.textContent = '▶'; // Opcionálisan frissítheted a gomb szövegét
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var zene = document.getElementById('hatterzene');
+        // Alapértelmezett hangerő beállítása 0.03-ra
+        zene.volume = 0.03;
+
+        // Próbálja meg automatikusan elindítani a zenét
+        var playPromise = zene.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Automatikus lejátszás sikeres
+            }).catch(error => {
+                console.log("Automatikus zenelejátszás nem sikerült: ", error);
+                // Automatikus lejátszás nem sikerült.
+                // Ideális esetben itt kérheted a felhasználót, hogy manuálisan indítsa el a zenét.
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
